@@ -11,10 +11,20 @@ def create_scatter_plot(data):
     Parameters:
     data (DataFrame): A DataFrame containing 'x' and 'y' columns.
     """
-    fig, _ = plt.subplots()
-    pass
-    return fig
+    sns.set(style="whitegrid")
 
+    fig, ax = plt.subplots()
+    sns.scatterplot(data=data, x='x', y='y', ax=ax)
+
+    ax.grid(True)
+
+    ax.set_xlabel('X Variable')
+    ax.set_ylabel('Y Variable')
+    ax.set_title('Scatter Plot of X vs Y')
+
+    plt.show()
+
+    return fig
 
 
 # Example data
